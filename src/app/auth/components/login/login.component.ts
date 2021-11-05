@@ -29,8 +29,14 @@ export class LoginComponent implements OnInit {
       const value = this.form.value;
       this.authService.login(value.email, value.password)
       .then( () => {
+        this.authService.isEmailVerified().then( () => {
         localStorage.setItem('email-login', value.email);
         this.router.navigate(['/']);
+        }).catch( () => {
+          
+        alert('correo no validado, revisa tu correo para validar tu cuenta');
+         this.authService.verifyEmail();
+      });
       })
       .catch( () => {
         alert('no es válido');
