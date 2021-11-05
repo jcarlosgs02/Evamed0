@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       const value = this.form.value;
       this.authService.login(value.email, value.password)
       .then( () => {
-        this.user.isEmailVerified().then( () => {
+        this.authService.isEmailVerified().then( () => {
         localStorage.setItem('email-login', value.email);
         this.router.navigate(['/']);
         }).catch( () => {
