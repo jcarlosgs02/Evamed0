@@ -45,7 +45,7 @@ export class AuthService {
      return this.af.auth.currentUser.sendEmailVerification();
    }
   // Verificar usuario
-   isEmailVerified(): Promise<void> {
+   isEmailVerified() {
      return this.af.auth.currentUser.emailVerified();
    }
   
