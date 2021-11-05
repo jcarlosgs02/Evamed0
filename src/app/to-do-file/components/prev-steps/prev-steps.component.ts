@@ -29,6 +29,7 @@ export class PrevStepsComponent implements OnInit {
         data => {
           if ( data.Sistema_constructivo !== null && data.Sistema_constructivo !== undefined ) {
             constructiveSystems.push(data.Sistema_constructivo)
+            console.log(data.sistema_constructivo);
           }
           if ( data.Material !== null && data.Material !== undefined ) {
             materialsExcel.push(data.Material);
