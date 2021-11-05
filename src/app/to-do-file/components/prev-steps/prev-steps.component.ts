@@ -42,8 +42,9 @@ export class PrevStepsComponent implements OnInit {
     
     let filterMaterialsExcel = materialsExcel.filter(this.onlyUnique);
     this.TotalMaterialsDB = filterMaterialsExcel.length;
-
-    this.TotalExistDB = 0
+    this.TotalMaterialsDB = this.TotalMaterialsDB -1;
+    
+    this.TotalExistDB = -1
     filterMaterialsExcel.map( filteredMaterial => {
       this.materialsService.getMaterials().subscribe( materials => { 
         materials.map( material => { 
