@@ -386,15 +386,12 @@
                 {{ material.value.Unidad }}
               </div>
               <div class="col-icon">
-                <div class="col-unidad" *ngIf="material.value.signal ; then thenBlock else elseBlock">
+                <div class="col-unidad" >
                   
-                    <ng-template #thenBlock><mat-icon class="custom-icon"  style="color:#a8d024">                                                                                            
-                    {{ material.value.signal ? "check_circle" : "error" }}
-                  </mat-icon></ng-template>
-                    <ng-template #elseBlock><mat-icon class="custom-icon"  style="color:#edc903">                                                                                            
+                    <mat-icon class="custom-icon" *ngIf="material.value.signal" style="color:#a8d024">
+                                                                                                                 
                     {{ material.value.signal ? "check_circle" : "error" }}
                   </mat-icon>
-                    </ng-template>
                 </div>
               </div>
             </div>
