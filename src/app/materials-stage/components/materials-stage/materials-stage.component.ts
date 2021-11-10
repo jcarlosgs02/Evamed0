@@ -219,7 +219,7 @@ export class MaterialsStageComponent implements OnInit {
       if (sc.Origen === 'Modelo de Revit' || sc.Origen === 'Usuario') {
         SCRevit.push(sc.Sistema_constructivo);
       }
-      if (sc.Origen === 'Calculado en Dynamo') {
+      if (sc.Origen === 'Opciones EVAMED') {
         SCDynamo.push(sc.Sistema_constructivo);
       }
       if (sc.Origen === 'Usuario_Plataforma') {
