@@ -573,7 +573,7 @@ export class MaterialsStageComponent implements OnInit {
         }
       }
       if (data.Sistema_constructivo === sc && origin === 'dynamo') {
-        if (data.Origen === 'Calculado en Dynamo') {
+        if (data.Origen === 'Opciones EVAMED') {
           data.signal = false;
           let materialABuscar = data.Material;
           if (data.materialSelectedDB !== undefined) {
