@@ -61,6 +61,7 @@ export class ToDoFileComponent implements OnInit {
           raw: true,
           defval: null,
         });
+      console.log(partialData);
         totalData.push(partialData);
       }
 
