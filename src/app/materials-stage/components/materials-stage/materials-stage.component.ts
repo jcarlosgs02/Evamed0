@@ -35,7 +35,7 @@ export class MaterialsStageComponent implements OnInit {
   listMateriales: any;
   selectedOptionsRevit: string[] = [];
   selectedOptionsDynamo: string[] = [];
-  selectedOptionsdynamo: string[] = [];
+  selectedOptionsUsuario: string[] = [];
   panelOpenFirst: boolean = true;
   panelOpenSecond: boolean = true;
   panelOpenThird: boolean = true;
