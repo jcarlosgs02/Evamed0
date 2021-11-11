@@ -35,7 +35,7 @@ export class MaterialsStageComponent implements OnInit {
   listMateriales: any;
   selectedOptionsRevit: string[] = [];
   selectedOptionsDynamo: string[] = [];
-  selectedOptionsUsuario: string[] = [];
+  selectedOptionsdynamo: string[] = [];
   panelOpenFirst: boolean = true;
   panelOpenSecond: boolean = true;
   panelOpenThird: boolean = true;
@@ -216,7 +216,7 @@ export class MaterialsStageComponent implements OnInit {
     const SCUsuario = [];
 
     this.listData.map((sc) => {
-      if (sc.Origen === 'Modelo de Revit' || sc.Origen === 'Usuario') {
+      if (sc.Origen === 'Modelo de Revit' || sc.Origen === 'Template EVAMED') {
         SCRevit.push(sc.Sistema_constructivo);
       }
       if (sc.Origen === 'Opciones EVAMED') {
@@ -249,7 +249,7 @@ export class MaterialsStageComponent implements OnInit {
       this.contentData[parseInt(key, 10) + 1].map(data => {
         value.map(sc => {
           if (data.Sistema_constructivo === sc) {
-            if (data.Origen === 'Modelo de Revit' || data.Origen === 'Usuario') {
+            if (data.Origen === 'Modelo de Revit' || data.Origen === 'Template EVAMED') {
               console.log(parseInt(key, 10) + 1);
             }
           }
@@ -408,7 +408,7 @@ export class MaterialsStageComponent implements OnInit {
           if (data.Sistema_constructivo === sc) {
             if (
               data.Origen === 'Modelo de Revit' ||
-              data.Origen === 'Usuario'
+              data.Origen === 'Template EVAMED'
             ) {
               this.materialsService
                 .searchMaterial(data.Material)
@@ -460,7 +460,7 @@ export class MaterialsStageComponent implements OnInit {
                           description_material: data['Descripción de Material'],
                         })
                         .subscribe((data) => {
-                          console.log('Success Modelo Revit o Usuario!');
+                          console.log('Success Modelo Revit o Template EVAMED!');
                           console.log(data);
                         });
                     }
@@ -477,7 +477,7 @@ export class MaterialsStageComponent implements OnInit {
       this.contentData[parseInt(key, 10) + 1].map((data) => {
         value.map((sc) => {
           if (data.Sistema_constructivo === sc) {
-            if (data.Origen === 'Calculado en Dynamo') {
+            if (data.Origen === 'Modelo de Revit') {
               this.materialsService
                 .searchMaterial(data.Material)
                 .subscribe((material) => {
@@ -526,7 +526,7 @@ export class MaterialsStageComponent implements OnInit {
                           description_material: data['Descripción de Material'],
                         })
                         .subscribe((data) => {
-                          console.log('Success Modelo Revit o Usuario!');
+                          console.log('Success Modelo Revit o Template EVAMED!');
                           console.log(data);
                         });
                     }
@@ -550,7 +550,7 @@ export class MaterialsStageComponent implements OnInit {
 
     this.listData.map((data) => {
       if (data.Sistema_constructivo === sc && origin === 'revit-user') {
-        if (data.Origen === 'Modelo de Revit' || data.Origen === 'Usuario') {
+        if (data.Origen === 'Modelo de Revit' || data.Origen === 'Template EVAMED') {
           data.signal = false;
           let materialABuscar = data.Material;
           if (data.materialSelectedDB !== undefined) {
